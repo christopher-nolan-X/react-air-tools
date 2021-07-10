@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  box-shadow: 0 16px 16px rgba(128, 50, 0, 0.15);
+  border-radius: 1rem;
+  overflow: hidden; }
+
+.navbar {
+  box-shadow: 0 12px 40px rgba(128, 50, 0, 0.15); }
