@@ -4,16 +4,32 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem,
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
+  
+  constructor(props) {
+    super(props);
+
+    this.toggleNav = this.toggleNav.bind(this);
+    this.state = {
+      isNavOpen: false
+    };
+  }
+
+  toggleNav() {
+    this.setState({
+      isNavOpen: !this.state.isNavOpen
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
         <Navbar sticky="top" expand="md">
           <div className="container-fluid">
-            <NavbarBrand className="mr-auto" href="/home">Air Tools</NavbarBrand>
-            <NavbarToggler />
+            <NavbarBrand className="mr-auto my-auto" tag="h1" href="/home">Air Tools</NavbarBrand>
+            <NavbarToggler onClick={this.toggleNav} className="mr-2" />
             <Collapse navbar>
-              <Nav navbar>
-                <NavItem>
+              <Nav className="container-fluid" navbar>
+                <NavItem className="ml-auto">
                   <NavLink className="nav-link" to="/home">
                     <i className="fa fa-home fa-lg" /> Home
                   </NavLink>
